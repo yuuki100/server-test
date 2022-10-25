@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+// option go_package = ".;grpc";
+
+// 生成後のディレクトリ
+option go_package = "pkg/grpc";
+
+//package grpc;
+
+package myapp;
+
+// サービスの定義
+service Greeter {
+  // サービスが持つメソッドの定義
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+  // rpc Hello (HelloRequest) returns (HelloResponse); 
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}
+
